@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos - Turbo Order</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Barra lateral -->
+  <div class="sidebar">
+    <img id="minhaImagem" src="image/Captura de tela 2024-11-03 215229.png" alt="Minha Imagem" class="sidebar-logo"/>
+    <div class="textosidebar">
+      <a href="#"><i class="bi bi-house-door"></i> Home</a>
+      <a href="#"><i class="bi bi-book"></i> Cardápio</a>
+      <a href="#" class="active"><i class="bi bi-box-seam"></i> Produtos</a>
+      <a href="#"><i class="bi bi-people"></i> Clientes</a>
+      <a href="#"><i class="bi bi-cart"></i> Pedidos</a>
+      <a href="#"><i class="bi bi-clock-history"></i> Histórico de Pedidos</a>
+      <a href="#"><i class="bi bi-box-arrow-right"></i> Sair</a>
+    </div>
+  </div>
+
+  <container class="main-content">
+  <!-- Conteúdo principal -->
+    <div class="header">
+      <div class="col mb-3">
+        <!-- Coluna da Barra de Pesquisa -->
+        <div class="col-md-8">
+          <input type="text" class="form-control" placeholder="Pesquisar por Nome" id="searchName" oninput="filterProducts()">
+        </div>
+    </div>
+
+    <div class="col mb-7">
+          <button class="btn btn-primary add-order-button">+ Pedido</button>
+    </div>
+    </div>
+
+
+
+
+    
+<!-- Filtros abaixo do título Produtos -->
+<div class="container">
+    <div class="boxPedido">
+      <!-- Coluna da esquerda com Nome e Tipo do Produto -->
+      <div class= "align-items-center filters">
+        <label for="filterName" class="me-2">Nome</label>
+        <input type="text" id="filterName" placeholder="Nome do Produto" oninput="filterProducts()" class="form-control me-3" style="max-width: 200px;">
+  
+        <label for="filterType" class="me-2">Tipo do Produto</label>
+        <select id="filterType" onchange="filterProducts()" class="form-select" style="max-width: 150px;">
+          <option value="" disable>--Selecione um tipo--</option>
+          <option value="Arroz">Arroz</option>
+          <option value="Feijão">Feijão</option>
+          <option value="Massa">Massa</option>
+          <option value="Carne">Carne</option>
+          <option value="Carne">Salada</option>
+        </select>
+      </div>
+  
+      <!-- Coluna da direita com o botão Salvar -->
+      <div class="filters">
+        <button class="btn btn-primary save-button" onclick="saveChanges()">Salvar</button>
+      </div>
+    </div>
+</div>
+  
+  
+
+
+
+
+
+
+
+
+    <!-- Tabela de produtos -->
+    <div class="table-section">
+      <table id="productTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Nome do Produto</th>
+            <th>Tipo do Produto</th>
+            <th>Configuração</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Linhas da tabela serão inseridas aqui -->
+        </tbody>
+      </table>
+    </div>
+  </container>
+
+  <script src="script.js"></script>
+</body>
+</html>
